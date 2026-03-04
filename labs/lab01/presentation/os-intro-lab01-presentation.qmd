@@ -1,5 +1,5 @@
 ---
-## Front matter
+## Title
 lang: ru-RU
 title: Лабораторная работа №1
 subtitle: Установка ОС Linux (Fedora Sway) в VirtualBox
@@ -32,8 +32,6 @@ header-includes:
   - \setmonofont{DejaVu Sans Mono}
 ---
 
-# Информация
-
 ## Докладчик
 :::::::::::::: {.columns align=center}
 ::: {.column width="70%"}
@@ -45,6 +43,8 @@ header-includes:
 ::: {.column width="30%"}
 :::
 ::::::::::::::
+
+#Информация
 
 ## Цель и задачи
 **Цель:** установить Fedora Sway в VirtualBox и выполнить базовую настройку системы.
@@ -59,12 +59,12 @@ header-includes:
 # Ход работы
 
 ## 1) Создание виртуальной машины
-Создал новую виртуальную машину в графическом интерфейсе и задал имя ВМ по логину.
+Создала новую виртуальную машину в графическом интерфейсе и задал имя ВМ по логину.
 
 ![Создание новой виртуальной машины](image/1.png){#fig-001 width=30%}
 
 ## 2) Настройка ресурсов
-Указал объём оперативной памяти и размер диска 80 ГБ.
+Указала объём оперативной памяти и размер диска 80 ГБ.
 
 \begin{center}
 \begin{minipage}{0.30\linewidth}
@@ -80,7 +80,7 @@ header-includes:
 \end{center}
 
 ## 3) Подключение установочного ISO
-Подключил ISO-образ Fedora Sway.
+Подключила ISO-образ Fedora Sway.
 
 ![Подключение ISO Fedora Sway](image/2.png){#fig-002 width=40%}
 
@@ -94,12 +94,12 @@ header-includes:
 # Первичная настройка Fedora
 
 ## Обновление и инструменты
-Установил `development-tools` и обновил пакеты.
+Установила `development-tools` и обновила пакеты.
 
 ![Обновление пакетов](image/3.png){#fig-003 width=60%}
 
 ## SELinux и hostname
-Перевёл SELinux в режим `permissive` и установил имя хоста по требованиям именования.
+Перевёла SELinux в режим `permissive` и установил имя хоста по требованиям именования.
 
 ![SELinux permissive](image/5.png){#fig-005 width=30%}
 
