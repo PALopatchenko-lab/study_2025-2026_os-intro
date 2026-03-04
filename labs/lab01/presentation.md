@@ -16,7 +16,7 @@ babel-otherlangs: english
 toc: false
 slide_level: 2
 aspectratio: 169
-section-titles: false
+section-titles: true
 theme: metropolis
 
 pdf-engine: xelatex
