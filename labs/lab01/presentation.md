@@ -4,7 +4,7 @@ lang: ru-RU
 title: Лабораторная работа №1
 subtitle: Установка ОС Linux (Fedora Sway) в VirtualBox
 author:
-  - Лащиков Алексей Антонович
+  - Лопатченко Полина Андреевна
 institute:
   - Российский университет дружбы народов, Москва, Россия
 date: 2026-02-18
@@ -37,7 +37,7 @@ header-includes:
 ## Докладчик
 :::::::::::::: {.columns align=center}
 ::: {.column width="70%"}
-  * Лащиков Алексей Антонович
+  * Лопатченко Полина Андреевна
   * Студент <группа>
   * Российский университет дружбы народов
   * [1032253527@rudn.ru](mailto:1032253527@rudn.ru)
@@ -82,99 +82,73 @@ header-includes:
 ## 3) Подключение установочного ISO
 Подключил ISO-образ Fedora Sway.
 
-![Подключение ISO Fedora Sway](image/6.png){#fig-006 width=40%}
+![Подключение ISO Fedora Sway](image/2.png){#fig-002 width=40%}
 
 ## 4) Параметры загрузки и виртуализации
-Включил ускорение 3D/контроллер VMSVGA и поддержку UEFI.
-
-\begin{center}
-\begin{minipage}{0.40\linewidth}
-\centering
-\includegraphics[width=\linewidth]{image/7.png}\\
-\footnotesize VMSVGA и 3D-ускорение
-\end{minipage}\hfill
-\begin{minipage}{0.40\linewidth}
-\centering
-\includegraphics[width=\linewidth]{image/8.png}\\
-\footnotesize UEFI включён
-\end{minipage}
-\end{center}
-
+Включила ускорение 3D/контроллер VMSVGA и поддержку UEFI.
 ## 5) Установка Fedora Sway
-Установил систему на диск и завершил установку.
+Установила систему на диск и завершил установку.
 
-![Завершение установки Fedora Sway](image/9.png){#fig-009 width=78%}
+![Завершение установки Fedora Sway](image/2.png){#fig-002 width=78%}
 
 # Первичная настройка Fedora
 
 ## Обновление и инструменты
 Установил `development-tools` и обновил пакеты.
 
-![Установка development-tools](image/10.png){#fig-010 width=70%}
-
-![Обновление пакетов](image/11.png){#fig-011 width=60%}
+![Обновление пакетов](image/3.png){#fig-003 width=60%}
 
 ## SELinux и hostname
 Перевёл SELinux в режим `permissive` и установил имя хоста по требованиям именования.
 
-![SELinux permissive](image/15.png){#fig-015 width=30%}
+![SELinux permissive](image/5.png){#fig-005 width=30%}
 
-![Установка hostname](image/20.png){#fig-020 width=30%}
+![Установка hostname](image/6.png){#fig-006 width=30%}
 
 ## Раскладка клавиатуры (Sway + system)
-Создал пользовательский конфиг Sway и отредактировал системный конфиг клавиатуры.
+Создала пользовательский конфиг Sway и отредактировал системный конфиг клавиатуры.
 
-![Пользовательский конфиг Sway](image/16.png){#fig-016 width=60%}
-
-![Системный конфиг клавиатуры](image/19.png){#fig-019 width=60%}
+![Системный конфиг клавиатуры](image/4.png){#fig-004 width=60%}
 
 # ПО для отчётов и обмен файлами
 
 ## Pandoc и TeX Live
-Установил `pandoc` и TeX Live для сборки PDF.
+Установила `pandoc` и TeX Live для сборки PDF.
 
-![Установка pandoc](image/21.png){#fig-021 width=40%}
+![Установка pandoc](image/7.png){#fig-007 width=40%}
 
-![Установка TeX Live](image/23.png){#fig-023 width=40%}
-
-## Общая папка VirtualBox
-Настроил shared folder через группу `vboxsf`.
-
-![Подключение общей папки](image/31.png){#fig-031 width=78%}
+![Установка TeX Live](image/8.png){#fig-008 width=40%}
 
 # Домашнее задание (dmesg)
 
-## Ключевая системная информация (1/4)
-Определил версию ядра Linux.
+## Ключевая системная информация (1/3)
+Определила версию ядра Linux. Определила частоту и модель процессора.
 
-![Версия ядра Linux](image/24.png){#fig-024 width=92%}
+![Версия ядра Linux](image/9.png){#fig-009 width=92%}
 
-## Ключевая системная информация (2/4)
-Определил частоту и модель процессора.
+![Частота процессора](image/9.png){#fig-009 width=92%}
 
-![Частота процессора](image/25.png){#fig-025 width=92%}
+![Модель процессора](image/9.png){#fig-009 width=92%}
 
-![Модель процессора](image/26.png){#fig-026 width=92%}
+## Ключевая системная информация (2/3)
+Определила объём доступной памяти и тип гипервизора.
 
-## Ключевая системная информация (3/4)
-Определил объём доступной памяти и тип гипервизора.
+![Доступная оперативная память](image/10.png){#fig-010 width=92%}
 
-![Доступная оперативная память](image/27.png){#fig-027 width=92%}
+![Тип гипервизора](image/11.png){#fig-011 width=92%}
 
-![Тип гипервизора](image/28.png){#fig-028 width=92%}
-
-## Ключевая системная информация (4/4)
+## Ключевая системная информация (3/3)
 Определил тип файловой системы корневого раздела и последовательность монтирования ФС.
 
 \begin{center}
 \begin{minipage}{0.48\linewidth}
 \centering
-\includegraphics[width=\linewidth]{image/29.png}\\
+\includegraphics[width=\linewidth]{image/11.png}\\
 \footnotesize Тип ФС корневого раздела
 \end{minipage}\hfill
 \begin{minipage}{0.48\linewidth}
 \centering
-\includegraphics[width=\linewidth]{image/30.png}\\
+\includegraphics[width=\linewidth]{image/10.png}\\
 \footnotesize Последовательность монтирования ФС
 \end{minipage}
 \end{center}
