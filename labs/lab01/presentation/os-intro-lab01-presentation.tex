@@ -1,0 +1,555 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+  aspectratio=169,
+  russian,
+]{beamer}
+\newif\ifbibliography
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolshorizontal
+% remove section numbering
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{section title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{subsection title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+
+\usetheme[]{default}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off,provide=*]{babel}
+\else
+\usepackage[bidi=default,shorthands=off,provide=*]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+\usepackage[]{csquotes}
+
+\IfFileExists{plex-otf.sty}{
+  %% Full TeXlive
+  % \usepackage[%
+  %   % math,
+  %   RM={Scale=0.94},SS={Scale=0.94},SScon={Scale=0.94},TT={Scale=MatchLowercase,FakeStretch=0.9},DefaultFeatures={Ligatures=Common}
+  % ]{plex-otf}
+}{
+  %% TinyTeX
+  \usepackage{libertine}
+}
+
+%%% Load theme
+% https://deic.uab.cat/~iblanes/beamer_gallery/
+\IfFileExists{beamerthemegotham.sty}{
+  %% Full TeXlive
+  \usetheme{gotham}
+  \gothamset{
+    numbering=totalpagenumber,
+    parttocframe default=off,
+    sectiontocframe default=off,
+    subsectiontocframe default=off,
+  }
+}{
+  %% TinyTeX
+  \usetheme{Madrid}
+}
+\metroset{progressbar=frametitle,sectionpage=none,numbering=fraction}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\defaultfontfeatures{Ligatures=TeX}
+\setsansfont{DejaVu Sans}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Содержание}
+\else
+  \newcommand\contentsname{Содержание}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Список иллюстраций}
+\else
+  \newcommand\listfigurename{Список иллюстраций}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Список таблиц}
+\else
+  \newcommand\listtablename{Список таблиц}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Рисунок}
+\else
+  \newcommand\figurename{Рисунок}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Таблица}
+\else
+  \newcommand\tablename{Таблица}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Список}
+\newcommand*\listoflistings{\listof{codelisting}{Листинги}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Лабораторная работа №1},
+  pdfauthor={Лопатченко Полина Андреевна},
+  pdflang={ru-RU},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{\texorpdfstring{Лабораторная работа №1}{Лабораторная работа №1}}
+\subtitle{\texorpdfstring{Установка ОС Linux (Fedora Sway) в
+VirtualBox}{Установка ОС Linux (Fedora Sway) в VirtualBox}}
+\author{Лопатченко Полина Андреевна}
+\date{2026-03-04}
+\institute{Российский университет дружбы народов, Москва, Россия}
+
+\begin{document}
+\frame{\titlepage}
+
+
+\begin{frame}{Докладчик}
+\protect\phantomsection\label{ux434ux43eux43aux43bux430ux434ux447ux438ux43a}
+\begin{columns}[c]
+\begin{column}{0.7\linewidth}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Лопатченко Полина Андреевна
+\item
+  Студент НКАбд-04-25
+\item
+  Российский университет дружбы народов
+\item
+  \href{mailto:1032253529@rudn.ru}{\nolinkurl{1032253529@rudn.ru}}
+\end{itemize}
+\end{column}
+
+\begin{column}{0.3\linewidth}
+\end{column}
+\end{columns}
+
+\#Информация
+\end{frame}
+
+\begin{frame}[fragile]{Цель и задачи}
+\protect\phantomsection\label{ux446ux435ux43bux44c-ux438-ux437ux430ux434ux430ux447ux438}
+\textbf{Цель:} установить Fedora Sway в VirtualBox и выполнить базовую
+настройку системы.
+
+\textbf{Задачи:}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  создать виртуальную машину и установить ОС;
+\item
+  выполнить первичную настройку (обновления, инструменты, SELinux,
+  раскладка, hostname);
+\item
+  установить ПО для подготовки отчётов (\texttt{pandoc}, TeX Live);
+\item
+  получить системную информацию через \texttt{dmesg}.
+\end{itemize}
+\end{frame}
+
+\section{Ход
+работы}\label{ux445ux43eux434-ux440ux430ux431ux43eux442ux44b}
+
+\begin{frame}{1) Создание виртуальной машины}
+\protect\phantomsection\label{ux441ux43eux437ux434ux430ux43dux438ux435-ux432ux438ux440ux442ux443ux430ux43bux44cux43dux43eux439-ux43cux430ux448ux438ux43dux44b}
+Создала новую виртуальную машину в графическом интерфейсе и задал имя ВМ
+по логину.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.3\linewidth,height=\textheight,keepaspectratio]{image/1.png}
+
+}
+
+\caption{\label{fig-001}Создание новой виртуальной машины}
+
+\end{figure}%
+\end{frame}
+
+\begin{frame}{2) Настройка ресурсов}
+\protect\phantomsection\label{ux43dux430ux441ux442ux440ux43eux439ux43aux430-ux440ux435ux441ux443ux440ux441ux43eux432}
+Указала объём оперативной памяти и размер диска 80 ГБ.
+
+\begin{center}
+\begin{minipage}{0.30\linewidth}
+\centering
+\includegraphics[width=\linewidth]{image/2.png}\\
+\footnotesize Память виртуальной машины
+\end{minipage}\hfill
+\begin{minipage}{0.30\linewidth}
+\centering
+\includegraphics[width=\linewidth]{image/4.png}\\
+\footnotesize Размер диска 80 ГБ
+\end{minipage}
+\end{center}
+\end{frame}
+
+\begin{frame}{3) Подключение установочного ISO}
+\protect\phantomsection\label{ux43fux43eux434ux43aux43bux44eux447ux435ux43dux438ux435-ux443ux441ux442ux430ux43dux43eux432ux43eux447ux43dux43eux433ux43e-iso}
+Подключила ISO-образ Fedora Sway.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{image/2.png}
+
+}
+
+\caption{\label{fig-002}Подключение ISO Fedora Sway}
+
+\end{figure}%
+\end{frame}
+
+\begin{frame}{4) Параметры загрузки и виртуализации}
+\protect\phantomsection\label{ux43fux430ux440ux430ux43cux435ux442ux440ux44b-ux437ux430ux433ux440ux443ux437ux43aux438-ux438-ux432ux438ux440ux442ux443ux430ux43bux438ux437ux430ux446ux438ux438}
+Включила ускорение 3D/контроллер VMSVGA и поддержку UEFI. \#\# 5)
+Установка Fedora Sway Установила систему на диск и завершил установку.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.78\linewidth,height=\textheight,keepaspectratio]{image/2.png}
+
+}
+
+\caption{\label{fig-002}Завершение установки Fedora Sway}
+
+\end{figure}%
+\end{frame}
+
+\section{Первичная настройка
+Fedora}\label{ux43fux435ux440ux432ux438ux447ux43dux430ux44f-ux43dux430ux441ux442ux440ux43eux439ux43aux430-fedora}
+
+\begin{frame}[fragile]{Обновление и инструменты}
+\protect\phantomsection\label{ux43eux431ux43dux43eux432ux43bux435ux43dux438ux435-ux438-ux438ux43dux441ux442ux440ux443ux43cux435ux43dux442ux44b}
+Установила \texttt{development-tools} и обновила пакеты.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{image/3.png}
+
+}
+
+\caption{\label{fig-003}Обновление пакетов}
+
+\end{figure}%
+\end{frame}
+
+\begin{frame}[fragile]{SELinux и hostname}
+\protect\phantomsection\label{selinux-ux438-hostname}
+Перевёла SELinux в режим \texttt{permissive} и установил имя хоста по
+требованиям именования.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.3\linewidth,height=\textheight,keepaspectratio]{image/5.png}
+
+}
+
+\caption{\label{fig-005}SELinux permissive}
+
+\end{figure}%
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.3\linewidth,height=\textheight,keepaspectratio]{image/6.png}
+
+}
+
+\caption{\label{fig-006}Установка hostname}
+
+\end{figure}%
+\end{frame}
+
+\begin{frame}{Раскладка клавиатуры (Sway + system)}
+\protect\phantomsection\label{ux440ux430ux441ux43aux43bux430ux434ux43aux430-ux43aux43bux430ux432ux438ux430ux442ux443ux440ux44b-sway-system}
+Создала пользовательский конфиг Sway и отредактировал системный конфиг
+клавиатуры.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{image/4.png}
+
+}
+
+\caption{\label{fig-004}Системный конфиг клавиатуры}
+
+\end{figure}%
+\end{frame}
+
+\section{ПО для отчётов и обмен
+файлами}\label{ux43fux43e-ux434ux43bux44f-ux43eux442ux447ux451ux442ux43eux432-ux438-ux43eux431ux43cux435ux43d-ux444ux430ux439ux43bux430ux43cux438}
+
+\begin{frame}[fragile]{Pandoc и TeX Live}
+\protect\phantomsection\label{pandoc-ux438-tex-live}
+Установила \texttt{pandoc} и TeX Live для сборки PDF.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{image/7.png}
+
+}
+
+\caption{\label{fig-007}Установка pandoc}
+
+\end{figure}%
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{image/8.png}
+
+}
+
+\caption{\label{fig-008}Установка TeX Live}
+
+\end{figure}%
+\end{frame}
+
+\section{Домашнее задание
+(dmesg)}\label{ux434ux43eux43cux430ux448ux43dux435ux435-ux437ux430ux434ux430ux43dux438ux435-dmesg}
+
+\begin{frame}{Ключевая системная информация (1/3)}
+\protect\phantomsection\label{ux43aux43bux44eux447ux435ux432ux430ux44f-ux441ux438ux441ux442ux435ux43cux43dux430ux44f-ux438ux43dux444ux43eux440ux43cux430ux446ux438ux44f-13}
+Определила версию ядра Linux. Определила частоту и модель процессора.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.92\linewidth,height=\textheight,keepaspectratio]{image/9.png}
+
+}
+
+\caption{\label{fig-009}Версия ядра Linux}
+
+\end{figure}%
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.92\linewidth,height=\textheight,keepaspectratio]{image/9.png}
+
+}
+
+\caption{\label{fig-009}Частота процессора}
+
+\end{figure}%
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.92\linewidth,height=\textheight,keepaspectratio]{image/9.png}
+
+}
+
+\caption{\label{fig-009}Модель процессора}
+
+\end{figure}%
+\end{frame}
+
+\begin{frame}{Ключевая системная информация (2/3)}
+\protect\phantomsection\label{ux43aux43bux44eux447ux435ux432ux430ux44f-ux441ux438ux441ux442ux435ux43cux43dux430ux44f-ux438ux43dux444ux43eux440ux43cux430ux446ux438ux44f-23}
+Определила объём доступной памяти и тип гипервизора.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.92\linewidth,height=\textheight,keepaspectratio]{image/10.png}
+
+}
+
+\caption{\label{fig-010}Доступная оперативная память}
+
+\end{figure}%
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.92\linewidth,height=\textheight,keepaspectratio]{image/11.png}
+
+}
+
+\caption{\label{fig-011}Тип гипервизора}
+
+\end{figure}%
+\end{frame}
+
+\begin{frame}{Ключевая системная информация (3/3)}
+\protect\phantomsection\label{ux43aux43bux44eux447ux435ux432ux430ux44f-ux441ux438ux441ux442ux435ux43cux43dux430ux44f-ux438ux43dux444ux43eux440ux43cux430ux446ux438ux44f-33}
+Определил тип файловой системы корневого раздела и последовательность
+монтирования ФС.
+
+\begin{center}
+\begin{minipage}{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{image/11.png}\\
+\footnotesize Тип ФС корневого раздела
+\end{minipage}\hfill
+\begin{minipage}{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{image/10.png}\\
+\footnotesize Последовательность монтирования ФС
+\end{minipage}
+\end{center}
+\end{frame}
+
+\section{Итоги}\label{ux438ux442ux43eux433ux438}
+
+\begin{frame}[fragile]{Выводы}
+\protect\phantomsection\label{ux432ux44bux432ux43eux434ux44b}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Создана ВМ в VirtualBox и установлена Fedora Sway.
+\item
+  Выполнена первичная настройка: обновления, инструменты, SELinux,
+  раскладка, hostname.
+\item
+  Установлены \texttt{pandoc} и TeX Live; настроена общая папка для
+  обмена файлами.
+\item
+  По \texttt{dmesg} получены параметры загрузки и сведения об окружении
+  (CPU, память, гипервизор, ФС). :::
+\end{itemize}
+\end{frame}
+
+
+
+
+\end{document}

@@ -1,10 +1,10 @@
 ---
 ## Author
 author:
-  name: Дмитрий Сергеевич Кулябов
-  degrees: DSc
+  name: Лопатченко Полина Андреевна
+  degrees: студент
   orcid: 0000-0002-0877-7063
-  email: kulyabov-ds@rudn.ru
+  email: 1032253529@rudn.ru
   affiliation:
     - name: Российский университет дружбы народов
       country: Российская Федерация
@@ -13,18 +13,14 @@ author:
       address: ул. Миклухо-Маклая, д. 6
 
 ## Title
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-license: "CC BY"
+title: "Лабораторная работа №3"
+subtitle: "Markdown"
+license: ""
 ---
 
 # Цель работы
 
-Здесь приводится формулировка цели лабораторной работы.
-Формулировки цели для каждой лабораторной работы приведены в методических указаниях.
-
-Цель данного шаблона --- максимально упростить подготовку отчётов по лабораторным работам.
-Модифицируя данный шаблон, студенты смогут без труда подготовить отчёт по лабораторным работам, а также познакомиться с основными возможностями разметки Markdown.
+Научиться оформлять отчеты с помощью легковесного языка разметки Markdown.
 
 # Задание
 
@@ -87,8 +83,8 @@ survive.
 
 ```
 - List item 1
-	- List item A
-	- List item B
+      - List item A
+      - List item B
 - List item 2
 ```
 
@@ -104,8 +100,8 @@ survive.
 
 ```
 1. First instruction
-	1. Sub-instruction
-	1. Sub-instruction
+      1. Sub-instruction
+      1. Sub-instruction
 1. Second instruction
 ```
 
@@ -179,16 +175,16 @@ LATEX_FORMAT =
 FILTER = --filter pandoc-crossref
 
 %.docx: %.md
-	-pandoc "$<" $(FILTER) -o "$@"
+      -pandoc "$<" $(FILTER) -o "$@"
 
 %.pdf: %.md
-	-pandoc "$<" $(LATEX_FORMAT) $(FILTER) -o "$@"
+      -pandoc "$<" $(LATEX_FORMAT) $(FILTER) -o "$@"
 
 all: $(FILES)
-	@echo $(FILES)
+      @echo $(FILES)
 
 clean:
-	-rm $(FILES) *~
+      -rm $(FILES) *~
 ```
 
 # Выполнение лабораторной работы
