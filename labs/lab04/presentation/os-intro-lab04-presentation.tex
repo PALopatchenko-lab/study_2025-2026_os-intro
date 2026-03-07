@@ -1,0 +1,1116 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+  aspectratio=169,
+  russian,
+]{beamer}
+\newif\ifbibliography
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolshorizontal
+% remove section numbering
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{section title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{subsection title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off,provide=*]{babel}
+\else
+\usepackage[bidi=default,shorthands=off,provide=*]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+\usepackage[]{csquotes}
+
+\IfFileExists{plex-otf.sty}{
+  %% Full TeXlive
+  % \usepackage[%
+  %   % math,
+  %   RM={Scale=0.94},SS={Scale=0.94},SScon={Scale=0.94},TT={Scale=MatchLowercase,FakeStretch=0.9},DefaultFeatures={Ligatures=Common}
+  % ]{plex-otf}
+}{
+  %% TinyTeX
+  \usepackage{libertine}
+}
+
+%%% Load theme
+% https://deic.uab.cat/~iblanes/beamer_gallery/
+\IfFileExists{beamerthemegotham.sty}{
+  %% Full TeXlive
+  \usetheme{gotham}
+  \gothamset{
+    numbering=totalpagenumber,
+    parttocframe default=off,
+    sectiontocframe default=off,
+    subsectiontocframe default=off,
+  }
+}{
+  %% TinyTeX
+  \usetheme{Madrid}
+}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Содержание}
+\else
+  \newcommand\contentsname{Содержание}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Список иллюстраций}
+\else
+  \newcommand\listfigurename{Список иллюстраций}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Список таблиц}
+\else
+  \newcommand\listtablename{Список таблиц}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Рисунок}
+\else
+  \newcommand\figurename{Рисунок}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Таблица}
+\else
+  \newcommand\tablename{Таблица}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Список}
+\newcommand*\listoflistings{\listof{codelisting}{Листинги}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Лабораторная работа №4},
+  pdfauthor={Лопатченко Полина Андреевна},
+  pdflang={ru-RU},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{\texorpdfstring{Лабораторная работа №4}{Лабораторная работа №4}}
+\subtitle{\texorpdfstring{Продвинутое использование
+git.}{Продвинутое использование git.}}
+\author{Лопатченко Полина Андреевна}
+\date{2026-03-07}
+
+\begin{document}
+\frame{\titlepage}
+
+\renewcommand*\contentsname{Содержание}
+\begin{frame}[allowframebreaks]
+  \frametitle{Содержание}
+  \setcounter{tocdepth}{1}
+  \tableofcontents
+\end{frame}
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+
+\section{Информация}\label{ux438ux43dux444ux43eux440ux43cux430ux446ux438ux44f}
+
+\begin{frame}{Докладчик}
+\protect\phantomsection\label{ux434ux43eux43aux43bux430ux434ux447ux438ux43a}
+\begin{columns}[c]
+\begin{column}{0.7\linewidth}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Лпатченко Полина Андреевна
+\item
+  студент
+\item
+  НКАбд-04-25
+\item
+  Российский университет дружбы народов им. П. Лумумбы
+\item
+  \href{mailro:1032253529@rudn.ru}{1032253529@rudn.ru}
+\item
+  \url{https://PALopatchenko.github.io/ru/}
+\end{itemize}
+\end{column}
+
+\begin{column}{0.3\linewidth}
+\pandocbounded{\includegraphics[keepaspectratio]{./image/я.jpg}}
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Вводная
+часть}\label{ux432ux432ux43eux434ux43dux430ux44f-ux447ux430ux441ux442ux44c}
+
+\begin{frame}{Актуальность}
+\protect\phantomsection\label{ux430ux43aux442ux443ux430ux43bux44cux43dux43eux441ux442ux44c}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Важно донести результаты своих исследований до окружающих
+\item
+  Научная презентация --- рабочий инструмент исследователя
+\item
+  Необходимо создавать презентацию быстро
+\item
+  Желательна минимизация усилий для создания презентации
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Объект и предмет исследования}
+\protect\phantomsection\label{ux43eux431ux44aux435ux43aux442-ux438-ux43fux440ux435ux434ux43cux435ux442-ux438ux441ux441ux43bux435ux434ux43eux432ux430ux43dux438ux44f}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Презентация как текст
+\item
+  Программное обеспечение для создания презентаций
+\item
+  Входные и выходные форматы презентаций
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Цели и задачи}
+\protect\phantomsection\label{ux446ux435ux43bux438-ux438-ux437ux430ux434ux430ux447ux438}
+\end{frame}
+
+\section{Цели}\label{ux446ux435ux43bux438}
+
+\section{Задание}\label{ux437ux430ux434ux430ux43dux438ux435}
+
+\begin{frame}{Задание}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Выполнить работу для тестового репозитория.
+\item
+  Преобразовать рабочий репозиторий в репозиторий с git-flow и
+  conventional commits.
+\end{itemize}
+\end{frame}
+
+\section{Теоретическое
+введение}\label{ux442ux435ux43eux440ux435ux442ux438ux447ux435ux441ux43aux43eux435-ux432ux432ux435ux434ux435ux43dux438ux435}
+
+\begin{frame}[fragile]{Рабочий процесс Gitflow}
+\protect\phantomsection\label{ux440ux430ux431ux43eux447ux438ux439-ux43fux440ux43eux446ux435ux441ux441-gitflow}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Рабочий процесс \emph{Gitflow Workflow}. Будем описывать его с
+  использованием пакета \texttt{git-flow}.
+\end{itemize}
+
+\begin{block}{Общая информация}
+\protect\phantomsection\label{ux43eux431ux449ux430ux44f-ux438ux43dux444ux43eux440ux43cux430ux446ux438ux44f}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Gitflow Workflow опубликована и популяризована Винсентом Дриссеном.
+\item
+  Gitflow Workflow предполагает выстраивание строгой модели ветвления с
+  учётом выпуска проекта.
+\item
+  Данная модель отлично подходит для организации рабочего процесса на
+  основе релизов.
+\item
+  Работа по модели Gitflow включает создание отдельной ветки для
+  исправлений ошибок в рабочей среде.
+\item
+  Последовательность действий при работе по модели Gitflow:
+
+  \begin{itemize}[<+->]
+  \tightlist
+  \item
+    Из ветки \texttt{master} создаётся ветка \texttt{develop}.
+  \item
+    Из ветки \texttt{develop} создаётся ветка \texttt{release}.
+  \item
+    Из ветки \texttt{develop} создаются ветки \texttt{feature}.
+  \item
+    Когда работа над веткой \texttt{feature} завершена, она сливается с
+    веткой \texttt{develop}.
+  \item
+    Когда работа над веткой релиза \texttt{release} завершена, она
+    сливается в ветки \texttt{develop} и \texttt{master}.
+  \item
+    Если в \texttt{master} обнаружена проблема, из \texttt{master}
+    создаётся ветка \texttt{hotfix}.
+  \item
+    Когда работа над веткой исправления \texttt{hotfix} завершена, она
+    сливается в ветки \texttt{develop} и \texttt{master}.
+  \end{itemize}
+\end{itemize}
+\end{block}
+
+\begin{block}{Процесс работы с Gitflow}
+\protect\phantomsection\label{ux43fux440ux43eux446ux435ux441ux441-ux440ux430ux431ux43eux442ux44b-ux441-gitflow}
+\begin{enumerate}[<+->]
+\item
+  Основные ветки (\texttt{master}) и ветки разработки (\texttt{develop})
+
+  \begin{itemize}[<+->]
+  \tightlist
+  \item
+    Для фиксации истории проекта в рамках этого процесса вместо одной
+    ветки \texttt{master} используются две ветки. В ветке
+    \texttt{master} хранится официальная история релиза, а ветка
+    \texttt{develop} предназначена для объединения всех функций. Кроме
+    того, для удобства рекомендуется присваивать всем коммитам в ветке
+    \texttt{master} номер версии.
+  \item
+    При использовании библиотеки расширений \texttt{git-flow} нужно
+    инициализировать структуру в существующем репозитории:
+  \end{itemize}
+
+\begin{verbatim}
+git flow init
+\end{verbatim}
+
+  \begin{itemize}[<+->]
+  \tightlist
+  \item
+    Для github параметр \texttt{Version\ tag\ prefix} следует установить
+    в \texttt{v}.
+  \item
+    После этого проверьте, на какой ветке Вы находитесь:
+  \end{itemize}
+
+\begin{verbatim}
+git branch
+\end{verbatim}
+\item
+  Функциональные ветки (feature)
+
+  \begin{itemize}[<+->]
+  \tightlist
+  \item
+    Под каждую новую функцию должна быть отведена собственная ветка,
+    которую можно отправлять в центральный репозиторий для создания
+    резервной копии или совместной работы команды. Ветки
+    \texttt{feature} создаются не на основе \texttt{master}, а на основе
+    \texttt{develop}. Когда работа над функцией завершается,
+    соответствующая ветка сливается обратно с веткой \texttt{develop}.
+    Функции не следует отправлять напрямую в ветку \texttt{master}.
+  \item
+    Как правило, ветки \texttt{feature} создаются на основе последней
+    ветки \texttt{develop}.
+
+    \begin{enumerate}[<+->]
+    \item
+      Создание функциональной ветки
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        Создадим новую функциональную ветку:
+      \end{itemize}
+
+\begin{verbatim}
+git flow feature start feature_branch
+\end{verbatim}
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        Создадим новую функциональную ветку:
+      \end{itemize}
+
+\begin{verbatim}
+git flow feature start feature_branch
+\end{verbatim}
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        Далее работаем как обычно.
+      \end{itemize}
+    \item
+      Окончание работы с функциональной веткой
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        По завершении работы над функцией следует объединить ветку
+        \texttt{feature\_branch} с \texttt{develop}:
+      \end{itemize}
+
+\begin{verbatim}
+git flow feature finish feature_branch
+\end{verbatim}
+    \item
+      Ветки выпуска (release)
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        Когда в ветке \texttt{develop} оказывается достаточно функций
+        для выпуска, из ветки \texttt{develop} создаётся ветка
+        \texttt{release}. Создание этой ветки запускает следующий цикл
+        выпуска, и с этого момента новые функции добавить больше нельзя
+        --- допускается лишь отладка, создание документации и решение
+        других задач. Когда подготовка релиза завершается, ветка
+        \texttt{release} сливается с \texttt{master} и ей присваивается
+        номер версии. После нужно выполнить слияние с веткой
+        \texttt{develop}, в которой с момента создания ветки релиза
+        могли возникнуть изменения.
+      \item
+        Благодаря тому, что для подготовки выпусков используется
+        специальная ветка, одна команда может дорабатывать текущий
+        выпуск, в то время как другая команда продолжает работу над
+        функциями для следующего.
+      \item
+        Создать новую ветку release можно с помощью следующей команды:
+      \end{itemize}
+
+\begin{verbatim}
+git flow release start 1.0.0
+\end{verbatim}
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        Для завершения работы на ветке release используются следующие
+        команды:
+      \end{itemize}
+
+\begin{verbatim}
+git flow release finish 1.0.0
+\end{verbatim}
+    \item
+      Ветки исправления (hotfix)
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        Ветки поддержки или ветки \texttt{hotfix} используются для
+        быстрого внесения исправлений в рабочие релизы. Они создаются от
+        ветки \texttt{master}. Это единственная ветка, которая должна
+        быть создана непосредственно от \texttt{master}. Как только
+        исправление завершено, ветку следует объединить с
+        \texttt{master} и \texttt{develop}. Ветка \texttt{master} должна
+        быть помечена обновлённым номером версии.
+      \item
+        Наличие специальной ветки для исправления ошибок позволяет
+        команде решать проблемы, не прерывая остальную часть рабочего
+        процесса и не ожидая следующего цикла релиза.
+      \item
+        Ветку \texttt{hotfix} можно создать с помощью следующих команд:
+      \end{itemize}
+
+\begin{verbatim}
+git flow hotfix start hotfix_branch
+\end{verbatim}
+
+      По завершении работы ветка \texttt{hotfix} объединяется с
+      \texttt{master} и \texttt{develop}:
+      \texttt{git\ flow\ hotfix\ finish\ hotfix\_branch}
+    \end{enumerate}
+  \end{itemize}
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Семантическое версионирование}
+\protect\phantomsection\label{ux441ux435ux43cux430ux43dux442ux438ux447ux435ux441ux43aux43eux435-ux432ux435ux440ux441ux438ux43eux43dux438ux440ux43eux432ux430ux43dux438ux435}
+Семантический подход в версионированию программного обеспечения.
+
+\begin{block}{Краткое описание семантического версионирования}
+\protect\phantomsection\label{ux43aux440ux430ux442ux43aux43eux435-ux43eux43fux438ux441ux430ux43dux438ux435-ux441ux435ux43cux430ux43dux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux432ux435ux440ux441ux438ux43eux43dux438ux440ux43eux432ux430ux43dux438ux44f}
+\begin{itemize}[<+->]
+\item
+  Семантическое версионирование описывается в манифесте семантического
+  версионирования.
+\item
+  Кратко его можно описать следующим образом:
+
+  \begin{itemize}[<+->]
+  \tightlist
+  \item
+    Версия задаётся в виде кортежа
+    \texttt{МАЖОРНАЯ\_ВЕРСИЯ.МИНОРНАЯ\_ВЕРСИЯ.ПАТЧ}.
+  \item
+    Номер версии следует увеличивать:
+
+    \begin{itemize}[<+->]
+    \tightlist
+    \item
+      МАЖОРНУЮ версию, когда сделаны обратно несовместимые изменения
+      API.
+    \item
+      МИНОРНУЮ версию, когда вы добавляете новую функциональность, не
+      нарушая обратной совместимости.
+    \item
+      ПАТЧ-версию, когда вы делаете обратно совместимые исправления.
+    \end{itemize}
+  \item
+    Дополнительные обозначения для предрелизных и билд-метаданных
+    возможны как дополнения к МАЖОРНАЯ.МИНОРНАЯ.ПАТЧ формату.
+  \end{itemize}
+\end{itemize}
+\end{block}
+
+\begin{block}{Программное обеспечение}
+\protect\phantomsection\label{ux43fux440ux43eux433ux440ux430ux43cux43cux43dux43eux435-ux43eux431ux435ux441ux43fux435ux447ux435ux43dux438ux435}
+\begin{itemize}[<+->]
+\item
+  Для реализации семантического версионирования создано несколько
+  программных продуктов.
+\item
+  При этом лучше всего использовать комплексные продукты, которые
+  используют информацию из коммитов системы версионирования.
+\item
+  Коммиты должны иметь стандартизованный вид.
+\item
+  В семантическое версионирование применяется вместе с
+  \emph{общепринятыми коммитами}.
+
+  \begin{enumerate}[<+->]
+  \item
+    Пакет Conventional Changelog
+
+    \begin{itemize}[<+->]
+    \tightlist
+    \item
+      Пакет Conventional Changelog является комплексным решением по
+      управлению коммитами и генерации журнала изменений.
+    \item
+      Содержит набор утилит, которые можно использовать по-отдельности.
+    \end{itemize}
+  \end{enumerate}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Общепринятые коммиты}
+\protect\phantomsection\label{ux43eux431ux449ux435ux43fux440ux438ux43dux44fux442ux44bux435-ux43aux43eux43cux43cux438ux442ux44b}
+Использование спецификации Conventional Commits.
+
+\begin{block}{Описание}
+\protect\phantomsection\label{ux43eux43fux438ux441ux430ux43dux438ux435}
+Спецификация Conventional Commits:
+
+\begin{itemize}[<+->]
+\item
+  Соглашение о том, как нужно писать сообщения commit'ов.
+\item
+  Совместимо с SemVer. Даже вернее сказать, сильно связано с
+  семантическим версионированием.
+\item
+  Регламентирует структуру и основные типы коммитов.
+
+  \begin{enumerate}[<+->]
+  \item
+    Структура коммита ``` ():
+
+    Или, по-русски:
+
+    (): {[}необязательное тело{]} {[}необязательный нижний колонтитул{]}
+    ```
+
+    \begin{itemize}[<+->]
+    \tightlist
+    \item
+      Заголовок является обязательным.
+    \item
+      Любая строка сообщения о фиксации не может быть длиннее 100
+      символов.
+    \item
+      Тема (subject) содержит краткое описание изменения.
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        Используйте повелительное наклонение в настоящем времени:
+        «изменить» (\enquote{change} not \enquote{changed} nor
+        \enquote{changes}).
+      \item
+        Не используйте заглавную первую букву.
+      \item
+        Не ставьте точку в конце.
+      \end{itemize}
+    \item
+      Тело (body) должно включать мотивацию к изменению и
+      противопоставлять это предыдущему поведению.
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        Как и в теме, используйте повелительное наклонение в настоящем
+        времени.
+      \end{itemize}
+    \item
+      Нижний колонтитул (footer) должен содержать любую информацию о
+      критических изменениях.
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        Следует использовать для указания внешних ссылок, контекста
+        коммита или другой мета информации.
+      \item
+        Также содержит ссылку на issue (например, на github), который
+        закрывает эта фиксация.
+      \item
+        Критические изменения должны начинаться со слова
+        \texttt{BREAKING\ CHANGE}: с пробела или двух символов новой
+        строки. Затем для этого используется остальная часть сообщения
+        фиксации.
+      \end{itemize}
+    \end{itemize}
+  \item
+    Типы коммитов
+
+    \begin{enumerate}[<+->]
+    \tightlist
+    \item
+      Базовые типы коммитов
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        \texttt{fix:} --- коммит типа fix исправляет ошибку (bug) в
+        вашем коде (он соответствует PATCH в SemVer).
+      \item
+        \texttt{feat:} --- коммит типа feat добавляет новую функцию
+        (feature) в ваш код (он соответствует MINOR в SemVer).
+      \item
+        \texttt{BREAKING\ CHANGE:} --- коммит, который содержит текст
+        \texttt{BREAKING\ CHANGE:} в начале своего не обязательного тела
+        сообщения (body) или в подвале (footer), добавляет изменения,
+        нарушающие обратную совместимость вашего API (он соответствует
+        MAJOR в SemVer). BREAKING CHANGE может быть частью коммита
+        любого типа.
+      \item
+        \texttt{revert:} --- если фиксация отменяет предыдущую фиксацию.
+        Начинается с revert:, за которым следует заголовок отменённой
+        фиксации. В теле должно быть написано: Это отменяет фиксацию
+        (это SHA-хэш отменяемой фиксации).
+      \item
+        Другое: коммиты с типами, которые отличаются от \texttt{fix:} и
+        \texttt{feat:}, также разрешены. Например,
+        @commitlint/config-conventional (основанный на The Angular
+        convention) рекомендует: chore:, docs:, style:, refactor:,
+        perf:, test:, и другие.
+      \end{itemize}
+    \item
+      Соглашения The Angular convention
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        Одно из популярных соглашений о поддержке исходных кодов ---
+        конвенция Angular (The Angular convention).
+      \end{itemize}
+
+      \begin{enumerate}[<+->]
+      \tightlist
+      \item
+        Типы коммитов The Angular convention Конвенция Angular (The
+        Angular convention) требует следующие типы коммитов:
+      \end{enumerate}
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        \texttt{build:} --- изменения, влияющие на систему сборки или
+        внешние зависимости (примеры областей (scope): gulp, broccoli,
+        npm).
+      \item
+        \texttt{ci:} --- изменения в файлах конфигурации и скриптах CI
+        (примеры областей: Travis, Circle, BrowserStack, SauceLabs).
+      \item
+        \texttt{docs:} --- изменения только в документации.
+      \item
+        \texttt{feat:} --- новая функция.
+      \item
+        \texttt{fix:} --- исправление ошибок.
+      \item
+        \texttt{perf:} --- изменение кода, улучшающее
+        производительность.
+      \item
+        \texttt{refactor:} --- Изменение кода, которое не исправляет
+        ошибку и не добавляет функции (рефакторинг кода).
+      \item
+        \texttt{style:} --- изменения, не влияющие на смысл кода
+        (пробелы, форматирование, отсутствие точек с запятой и т. д.).
+      \item
+        \texttt{test:} --- добавление недостающих тестов или исправление
+        существующих тестов.
+      \end{itemize}
+
+      \begin{enumerate}[<+->]
+      \tightlist
+      \item
+        Области действия (scope) Областью действия должно быть имя
+        затронутого пакета npm (как его воспринимает человек, читающий
+        журнал изменений, созданный из сообщений фиксации). Есть
+        несколько исключений из правила «использовать имя пакета»:
+      \end{enumerate}
+
+      \begin{itemize}[<+->]
+      \tightlist
+      \item
+        \texttt{packaging} --- используется для изменений, которые
+        изменяют структуру пакета, например, изменения общедоступного
+        пути.
+      \item
+        \texttt{changelog} --- используется для обновления примечаний к
+        выпуску в CHANGELOG.md.
+      \item
+        отсутствует область действия --- полезно для изменений стиля,
+        тестирования и рефакторинга, которые выполняются во всех пакетах
+        (например, style: добавить отсутствующие точки с запятой).
+      \end{itemize}
+    \item
+      Соглашения @commitlint/config-conventional Соглашение
+      @commitlint/config-conventional входит в пакет Conventional
+      Changelog. В целом в этом соглашении придерживаются соглашения
+      Angular.
+    \end{enumerate}
+  \end{enumerate}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Выполнение лабораторной
+работы}\label{ux432ux44bux43fux43eux43bux43dux435ux43dux438ux435-ux43bux430ux431ux43eux440ux430ux442ux43eux440ux43dux43eux439-ux440ux430ux431ux43eux442ux44b}
+
+\begin{frame}[fragile]{Установка программного обеспечения}
+\protect\phantomsection\label{ux443ux441ux442ux430ux43dux43eux432ux43aux430-ux43fux440ux43eux433ux440ux430ux43cux43cux43dux43eux433ux43e-ux43eux431ux435ux441ux43fux435ux447ux435ux43dux438ux44f}
+\begin{block}{Установка git-flow}
+\protect\phantomsection\label{ux443ux441ux442ux430ux43dux43eux432ux43aux430-git-flow}
+Установила git-flow (см. \hyperlink{fig-001}{рис.1}).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/1.png}
+
+}
+
+\caption{\label{fig-001}Установка git-flow}
+
+\end{figure}%
+\end{block}
+
+\begin{block}{Установка Node.js}
+\protect\phantomsection\label{ux443ux441ux442ux430ux43dux43eux432ux43aux430-node.js}
+Установила Node.js (см. \hyperlink{fig-002}{рис.2}).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/2.png}
+
+}
+
+\caption{\label{fig-002}Установка Node.js}
+
+\end{figure}%
+\end{block}
+
+\begin{block}{Настройка Node.js}
+\protect\phantomsection\label{ux43dux430ux441ux442ux440ux43eux439ux43aux430-node.js}
+Запустила \texttt{pnpm\ setup} и выполнил
+\texttt{source\ \textasciitilde{}/.bashrc} (см.
+\hyperlink{fig-003}{рис.3}).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/3.png}
+
+}
+
+\caption{\label{fig-003}Запуск pnpm setup и выполнение source
+\textasciitilde/.bashrc}
+
+\end{figure}%
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Практический сценарий использования git}
+\protect\phantomsection\label{ux43fux440ux430ux43aux442ux438ux447ux435ux441ux43aux438ux439-ux441ux446ux435ux43dux430ux440ux438ux439-ux438ux441ux43fux43eux43bux44cux437ux43eux432ux430ux43dux438ux44f-git}
+\begin{block}{Создание репозитория git}
+\protect\phantomsection\label{ux441ux43eux437ux434ux430ux43dux438ux435-ux440ux435ux43fux43eux437ux438ux442ux43eux440ux438ux44f-git}
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  Подключение репозитория к github
+\end{enumerate}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Создала репозиторий на GitHub. Назвал его \texttt{git-extended} (см.
+  \hyperlink{fig-004}{рис.4}).
+\end{itemize}
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/4.png}
+
+}
+
+\caption{\label{fig-004}Создание репозитория GitHub}
+
+\end{figure}%
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Сделала первый коммит и выложил его на github (см.
+  \hyperlink{fig-005}{рис.5}).
+\end{itemize}
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/5.png}
+
+}
+
+\caption{\label{fig-005}Создание первого коммита и его загрузка на
+github}
+
+\end{figure}%
+
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  Конфигурация общепринятых коммитов (см. \hyperlink{fig-006}{рис.6}).
+\end{enumerate}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Конфигурация пакетов Node.js (см. \hyperlink{fig-006}{рис.6}).
+\end{itemize}
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/6.png}
+
+}
+
+\caption{\label{fig-006}Выполнение конфигурации пакетов Node.js}
+
+\end{figure}%
+
+Заполнила несколько параметров пакета и сконфигурировал формат коммитов
+(см. \hyperlink{fig-007}{рис.7}).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/7.png}
+
+}
+
+\caption{\label{fig-007}Заполнение нескольких параметров пакета и
+конфигурация формата коммитов}
+
+\end{figure}%
+
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  Конфигурация git-flow
+\end{enumerate}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Инициализировала git-flow (см. \hyperlink{fig-011}{рис.11}).
+\end{itemize}
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/11.png}
+
+}
+
+\caption{\label{fig-011}Инициализация git-flow}
+
+\end{figure}%
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Проверила, что я на ветке \texttt{develop}, загрузил весь репозиторий
+  в хранилище, установил внешнюю ветку как вышестоящую для этой ветки и
+  создал релиз с версией 1.0.0 (см. \hyperlink{fig-012}{рис.12}).
+\end{itemize}
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/12.png}
+
+}
+
+\caption{\label{fig-012}Проверка нахождения на ветке develop, загрузка
+всего репозитория в хранилище, установка внешней ветки как вышестоящей
+для этой ветки и создание релиза с версией 1.0.0}
+
+\end{figure}%
+
+Создала журнал изменений и добавила его в индекс (см.
+\hyperlink{fig-013}{рис.13}).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/13.png}
+
+}
+
+\caption{\label{fig-013}Создание журнала изменений и добавление его в
+индекс}
+
+\end{figure}%
+\end{block}
+
+\begin{block}{Работа с репозиторием git}
+\protect\phantomsection\label{ux440ux430ux431ux43eux442ux430-ux441-ux440ux435ux43fux43eux437ux438ux442ux43eux440ux438ux435ux43c-git}
+\begin{enumerate}[<+->]
+\item
+  Разработка новой функциональности
+\item
+  Создание релиза git-flow
+\end{enumerate}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Создала релиз с версией \texttt{1.2.3}, обновила номер версии в
+  \texttt{package.json}, создал журнал изменений и добавил журнал
+  изменений в индекс (см. \hyperlink{fig-016}{рис.16}).
+\end{itemize}
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/16.png}
+
+}
+
+\caption{\label{fig-016}Создание релиза с версией \texttt{1.2.3},
+обновление номера версии в \texttt{package.json}, создание журнала
+изменений и добавление журнал изменений в индекс}
+
+\end{figure}%
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Залила релизную ветку в основную ветку, отправила данные на github,
+  создала релиз на github с комментариями из журнала изменений (см.
+  \hyperlink{fig-017}{рис.17}).
+\end{itemize}
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/17.png}
+
+}
+
+\caption{\label{fig-017}Залил релизную ветку в основную ветку, отправка
+данных на github, создание релиза на github с комментариями из журнала
+изменений}
+
+\end{figure}%
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Преобразование рабочего репозитория в репозиторий
+с git-flow и conventional commits}
+\protect\phantomsection\label{ux43fux440ux435ux43eux431ux440ux430ux437ux43eux432ux430ux43dux438ux435-ux440ux430ux431ux43eux447ux435ux433ux43e-ux440ux435ux43fux43eux437ux438ux442ux43eux440ux438ux44f-ux432-ux440ux435ux43fux43eux437ux438ux442ux43eux440ux438ux439-ux441-git-flow-ux438-conventional-commits}
+Зашла в папку \texttt{os-intro}, создала новый репозиторий, добавила все
+файлы в индекс, сохранила первый коммит и создала \texttt{package.json}
+(см. \hyperlink{fig-018}{рис.18}).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/18.png}
+
+}
+
+\caption{\label{fig-018}Переход в папку os-intro, создание нового
+репозитория, добавление всех файлов в индекс, сохранение первого коммита
+и создание package.json}
+
+\end{figure}%
+
+Заполнила несколько параметров пакета и сконфигурировал формат коммитов
+(см. \hyperlink{fig-019}{рис.19}).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/19.png}
+
+}
+
+\caption{\label{fig-019}Заполнение параметров пакета и конфигурация
+формата коммитов}
+
+\end{figure}%
+
+Сделала \texttt{git\ flow\ init}, настроил \texttt{master} и
+\texttt{develop}, префиксы веток и префикс тегов v. Проверил, что все
+ветки появились и запушил всё на GitHub. (см.
+\hyperlink{fig-020}{рис.20}).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/20.png}
+
+}
+
+\caption{\label{fig-020}Выполнение git flow init, настройка master и
+develop, префиксов веток и префиксв тегов v. Проверка, появления веток и
+отправка на GitHub}
+
+\end{figure}%
+\end{frame}
+
+\section{Выводы}\label{ux432ux44bux432ux43eux434ux44b}
+
+\begin{frame}{Выводы}
+В ходе данной лабораторной работы были получены навыки правильной работы
+с репозиториями git.
+\end{frame}
+
+
+
+
+\end{document}
