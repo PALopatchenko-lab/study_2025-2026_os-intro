@@ -1,0 +1,14 @@
+{
+  "name": "os-intro",
+  "version": "1.0.0",
+  "description": "Git repo for educational purposes",
+  "main": "index.js",
+  "repsitory": "git@github.com:PALopatchenko-lab/study_2025-2026_os-intro",
+  "author": "Polina Lopatchenko <lopatapol228@gmail.com>",
+  "license": "CC-BY-4.0",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
