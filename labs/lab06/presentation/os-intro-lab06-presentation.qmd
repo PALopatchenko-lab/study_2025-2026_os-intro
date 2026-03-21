@@ -102,6 +102,10 @@ date-format: "YYYY-MM-DD" # Example: 2025-09-06
 
 ![Файлы в домашнем каталоге](image/7.png){ #fig:007 width=70% height=70% }
 
+## Работа с каталогами
+
+![Действия с каталогами](image/8.png){ #fig:008 width=70% height=70% }
+
 ## Опции команды ls
 
 ![Команда ls -R и ls -t](image/9.png){ #fig:009 width=70% height=70% }
@@ -113,6 +117,13 @@ date-format: "YYYY-MM-DD" # Example: 2025-09-06
 ## Справка по командам
 
 ![Справка по команде pwd](image/11.png){ #fig:011 width=70% height=70% }
+
+![Справка по команде mkdir](image/12.png){ #fig:012 width=70% }
+
+![Справка по команде rmdir](image/13.png){ #fig:013 width=70% }
+
+![Справка по команде rm](image/14.png){ #fig:014 width=70% }
+
 
 # Выводы по проделанной работе
 
