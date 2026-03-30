@@ -65,10 +65,6 @@ date-format: "YYYY-MM-DD" # Example: 2025-09-06
 
 ![Запись в файл](image/1.png){ #fig:001 height=70% width=70% }
 
-## Работа фильтра
-
-![Поиск расширения .conf](image/2.png){ #fig:002 height=70% width=70% }
-
 ## Команда поиска
 
 ![Поиск файлов](image/3.png){ #fig:003 height=70% width=70% }
