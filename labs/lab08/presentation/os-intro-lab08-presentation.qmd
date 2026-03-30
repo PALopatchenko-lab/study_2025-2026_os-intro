@@ -69,10 +69,6 @@ date-format: "YYYY-MM-DD" # Example: 2025-09-06
 
 ![Поиск файлов](image/3.png){ #fig:003 height=70% width=70% }
 
-## Команда поиска
-
-![Поиск файлов](image/4.png){ #fig:004 height=70% width=70% }
-
 ## Управление процессами
 
 ![Фоновый запуск процесса](image/5.png){ #fig:005 height=70% width=70% }
