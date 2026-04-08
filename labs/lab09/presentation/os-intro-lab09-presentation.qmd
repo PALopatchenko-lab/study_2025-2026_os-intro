@@ -59,39 +59,39 @@ date-format: "YYYY-MM-DD" # Example: 2025-09-06
 
 ## Работа с Midnight Commander
 
-![Запуск mc](image/01.png){ #fig:001 width=70% height=70% }
+![Запуск mc](image/1.png){ #fig:001 width=70% height=70% }
 
 ## Работа с Midnight Commander
 
-![Выделение](image/02.png){ #fig:002 width=70% height=70% }
+![Выделение](image/2.png){ #fig:002 width=70% height=70% }
 
 ## Работа с Midnight Commander
 
-![Отмена](image/03.png){ #fig:003 width=70% height=70% }
+![Отмена](image/3.png){ #fig:003 width=70% height=70% }
 
 ## Работа с Midnight Commander
 
-![Копирование](image/04.png){ #fig:004 width=70% height=70% }
+![Копирование](image/4.png){ #fig:004 width=70% height=70% }
 
 ## Работа с Midnight Commander
 
-![Перемещение](image/05.png){ #fig:005 width=70% height=70% }
+![Перемещение](image/5.png){ #fig:005 width=70% height=70% }
 
 ## Работа с Midnight Commander
 
-![Информация](image/06.png){ #fig:006 width=70% height=70% }
+![Информация](image/6.png){ #fig:006 width=70% height=70% }
 
 ## Работа с Midnight Commander
 
-![Быстрый просмотр](image/07.png){ #fig:007 width=70% height=70% }
+![Быстрый просмотр](image/7.png){ #fig:007 width=70% height=70% }
 
 ## Работа с Midnight Commander
 
-![Информация](image/08.png){ #fig:008 width=70% height=70% }
+![Информация](image/8.png){ #fig:008 width=70% height=70% }
 
 ## Работа с Midnight Commander
 
-![Дерево каталогов](image/09.png){ #fig:009 width=70% height=70% }
+![Дерево каталогов](image/9.png){ #fig:009 width=70% height=70% }
 
 ## Работа с Midnight Commander
 
