@@ -15,8 +15,8 @@ author:
 title: Лабораторная работа №10
 subtitle: Редактор Vi
 license: CC BY
-date: today
-date-format: "2026-04-13" # Example: 2025-09-06
+date: 2026-04-13
+date-format: "2025-09-06" # Example: 2025-09-06
 ---
 
 # Информация
