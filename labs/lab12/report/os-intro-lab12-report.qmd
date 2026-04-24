@@ -2,7 +2,7 @@
 ## Author
 author:
   name: Лопатченко Полина Андреевна
-  degrees: студент
+  degrees: Cтудент
   orcid: 0000-0002-0877-7063
   email: 10322253529@rudn.ru
   affiliation:
