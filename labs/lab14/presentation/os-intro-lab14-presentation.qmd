@@ -12,8 +12,8 @@ author:
       city: Москва
       address: ул. Миклухо-Маклая, д. 6
 ## Title
-title: Лабораторная работа №10
-subtitle: Редактор Vi
+title: Лабораторная работа №14
+subtitle: Программирование в командном процессоре ОС UNIX."
 license: CC BY
 date: 2026-05-11
 date-format: "YYYY-MM-DD" # Example: 2025-09-06
