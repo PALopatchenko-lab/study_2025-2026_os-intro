@@ -17,6 +17,24 @@ subtitle: Продвинутые темы
 license: CC BY
 date: 2026-04-16
 date-format: "2026-04-13" # Example: 2025-09-06
+beamer:
+    theme: metropolis
+    colortheme: default
+    aspectratio: 169
+    pdf-engine: xelatex
+    include-in-header:
+      - text: |
+          \metroset{progressbar=frametitle,sectionpage=none,numbering=fraction}
+          \usepackage{fontspec}
+          \usepackage{polyglossia}
+          \setdefaultlanguage{russian}
+          \setotherlanguage{english}
+          \defaultfontfeatures{Ligatures=TeX}
+          \setsansfont{Segoe UI}
+          \setmainfont{Times New Roman}
+          \setmonofont{Consolas}
+          \usepackage{graphicx}
+          \setkeys{Gin}{keepaspectratio}
 ---
 # Информация
 
