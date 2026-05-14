@@ -15,7 +15,7 @@ author:
 title: Второй этап внешнего курса
 subtitle: Работа на сервере
 license: CC BY
-date: 2026-04-16
+date: 2026-05-13
 date-format: "YYYY-MM-DD" # Example: 2025-09-06
 ---
 # Информация
@@ -83,12 +83,12 @@ date-format: "YYYY-MM-DD" # Example: 2025-09-06
 :::::::::::::: {.columns align=center}
 ::: {.column width="50%"}
 
-![Задание о назначении удалённого сервера](image/1.png){#fig-001 width=85%}
+![Задание о назначении удалённого сервера](image/1.png){#fig-001 width=70%}
 
 :::
 ::: {.column width="50%"}
 
-![Выбор ключа, который можно пересылать по интернету](image/2.png){#fig-002 width=85%}
+![Выбор ключа, который можно пересылать по интернету](image/2.png){#fig-002 width=70%}
 
 :::
 ::::::::::::::
@@ -109,14 +109,14 @@ date-format: "YYYY-MM-DD" # Example: 2025-09-06
 На этапе обмена файлами были выполнены задания по копированию каталога на сервер и по возможностям программы FileZilla (@fig-003, @fig-005).
 
 :::::::::::::: {.columns align=center}
-::: {.column width="50%"}
+::: {.column width="30%"}
 
-![Выбор команды для копирования каталога на сервер](image/3.png){#fig-003 width=90%}
+![Выбор команды для копирования каталога на сервер](image/3.png){#fig-003 width=70%}
 
 :::
-::: {.column width="50%"}
+::: {.column width="30%"}
 
-![Выбор возможностей программы FileZilla](image/5.png){#fig-005 width=90%}
+![Выбор возможностей программы FileZilla](image/5.png){#fig-005 width=70%}
 
 :::
 ::::::::::::::
@@ -137,12 +137,12 @@ date-format: "YYYY-MM-DD" # Example: 2025-09-06
 В этом разделе были выполнены задания по справке и запуску программ. Например, были определены входные форматы FastQC и составлена команда для ClustalW (@fig-008, @fig-009).
 
 :::::::::::::: {.columns align=center}
-::: {.column width="50%"}
+::: {.column width="30%"}
 
 ![Определение форматов входных данных FastQC](image/8.png){#fig-008 width=70%}
 
 :::
-::: {.column width="50%"}
+::: {.column width="30%"}
 
 ![Ввод команды запуска ClustalW для множественного выравнивания](image/9.png){#fig-009 width=70%}
 
@@ -194,9 +194,9 @@ date-format: "YYYY-MM-DD" # Example: 2025-09-06
 * проверить результат и загрузить файл на платформу (@fig-018, @fig-019).
 
 :::::::::::::: {.columns align=center}
-::: {.column width="50%"}
+::: {.column width="30%"}
 
-![Результат запуска bowtie2 и просмотр файла align.err](image/18.png){#fig-018 width=90%}
+![Результат запуска bowtie2 и просмотр файла align.err](image/18.png){#fig-018 width=70%}
 
 :::
 ::: {.column width="50%"}
@@ -240,12 +240,12 @@ date-format: "YYYY-MM-DD" # Example: 2025-09-06
 :::
 ::: {.column width="33%"}
 
-![Выбор ответа о поведении tmux после закрытия терминала](image/22.png){#fig-022 width=100%}
+![Выбор ответа о поведении tmux после закрытия терминала](image/22.png){#fig-022 width=90%}
 
 :::
 ::: {.column width="33%"}
 
-![Самостоятельное задание по разделению окон в tmux](image/25.png){#fig-025 width=100%}
+![Самостоятельное задание по разделению окон в tmux](image/25.png){#fig-025 width=90%}
 
 :::
 ::::::::::::::

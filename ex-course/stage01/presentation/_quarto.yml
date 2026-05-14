@@ -47,9 +47,6 @@ format:
 
     mainfont: "DejaVu Serif"
 
-    include-in-header:
-      - file: _resources/tex/beamer.tex
-
     babel-lang: russian
     babel-otherlangs: english
 
