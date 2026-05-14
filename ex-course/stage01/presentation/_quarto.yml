@@ -16,40 +16,39 @@ format:
 
   beamer:
     pdf-engine: xelatex
-
+  
     toc: true
     toc-title: "Содержание"
-
+  
     number-sections: false
     number-depth: 1
     toc-depth: 1
-
+  
     aspectratio: 169
-
+  
     incremental: true
     section-titles: true
-
-    navigation: horizontal
-
-    colorlinks: false
-
-    csquotes: true
-    indent: true
-
+  
     fontsize: 11pt
-
+  
     fig-width: 8
     fig-height: 5
-
+  
     fig-align: center
-
+  
     keep-tex: true
-
+  
     mainfont: "DejaVu Serif"
-
+  
+    theme: Madrid
+  
+    colortheme: default
+  
+    fonttheme: professionalfonts
+  
     babel-lang: russian
     babel-otherlangs: english
-
+    
   revealjs:
     transition: slide
     margin: 0.2
