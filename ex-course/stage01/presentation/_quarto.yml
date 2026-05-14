@@ -6,29 +6,54 @@ standalone: true
 self-contained: true
 slide-level: 2
 lang: ru-RU
+
 crossref:
-  lof-title: Список иллюстраций
-  lot-title: Список таблиц
-  lol-title: Листинги
-format: # Formats
-  beamer: # Pdf output format
+  lof-title: "Список иллюстраций"
+  lot-title: "Список таблиц"
+  lol-title: "Листинги"
+
+format:
+
+  beamer:
+    pdf-engine: xelatex
+
     toc: true
-    toc-title: Содержание
+    toc-title: "Содержание"
+
     number-sections: false
     number-depth: 1
-    colorlinks: false
     toc-depth: 1
+
     aspectratio: 169
-    section-titles: true
+
     incremental: true
+    section-titles: true
+
     navigation: horizontal
+
+    colorlinks: false
+
     csquotes: true
     indent: true
+
+    fontsize: 11pt
+
+    fig-width: 8
+    fig-height: 5
+
+    fig-align: center
+
+    keep-tex: true
+
+    mainfont: "DejaVu Serif"
+
     include-in-header:
       - file: _resources/tex/beamer.tex
+
     babel-lang: russian
     babel-otherlangs: english
-  revealjs: # Html output
+
+  revealjs:
     transition: slide
     margin: 0.2
     smaller: true
