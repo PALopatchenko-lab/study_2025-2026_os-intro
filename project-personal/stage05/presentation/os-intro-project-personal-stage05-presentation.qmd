@@ -50,15 +50,15 @@ date-format: "2026-04-13" # Example: 2025-09-06
 
 ## Файл о проекте
 
-![Файл о проекте](image/01.png){ #fig:001 width=70% height=70%}
+![Файл о проекте](image/1.png){ #fig:001 width=70% height=70%}
 
 ## Файл для поста
 
-![Файл для поста](image/02.png){ #fig:002 width=70% height=70%}
+![Файл для поста](image/2.png){ #fig:002 width=70% height=70%}
 
 ## Файл для публикации
 
-![Файл для публикации](image/03.png){ #fig:003 width=70% height=70%}
+![Файл для публикации](image/3.png){ #fig:003 width=70% height=70%}
 
 # Выводы
 
