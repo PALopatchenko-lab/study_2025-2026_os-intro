@@ -15,7 +15,7 @@ author:
 title: Третий этап внешнего курса
 subtitle: Продвинутые темы
 license: CC BY
-date: 2026-04-16
+date: 2026-05-14
 date-format: "2026-04-13" # Example: 2025-09-06
 beamer:
     theme: metropolis
@@ -54,28 +54,6 @@ beamer:
 ::: {.column width="30%"}
 
 ![](./image/я.jpg)
-
-:::
-::::::::::::::
-
-# Информация
-
-## Докладчик
-
-:::::::::::::: {.columns align=center}
-::: {.column width="70%"}
-
-  * Кулябов Дмитрий Сергеевич
-  * д.ф.-м.н., профессор
-  * профессор кафедры теории вероятностей и кибербезопасности
-  * Российский университет дружбы народов им. П. Лумумбы
-  * [kulyabov-ds@rudn.ru](mailto:kulyabov-ds@rudn.ru)
-  * <https://yamadharma.github.io/ru/>
-
-:::
-::: {.column width="30%"}
-
-![](./image/kulyabov.jpg)
 
 :::
 ::::::::::::::
